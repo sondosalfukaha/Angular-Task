@@ -1,0 +1,15 @@
+<p>Welcome to the second page!</p>
+<div>
+  <label for="componentSelector">Choose a component to display:</label>
+  <select id="componentSelector" [(ngModel)]="selectedComponent">
+    <option value="comp1">Component 1</option>
+    <option value="comp2">Component 2</option>
+  </select>
+</div>
+
+<!-- Display components dynamically -->
+<div [ngSwitch]="selectedComponent">
+  <app-comp1 *ngSwitchCase="'comp1'"></app-comp1>
+  <app-comp2 *ngSwitchCase="'comp2'"></app-comp2>
+</div>
+
